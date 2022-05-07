@@ -64,3 +64,21 @@ const showPerson = (person) => {
   job.textContent = item.job;
   info.textContent = item.text;
 };
+
+// Show next review
+nextBtn.addEventListener('click', () => {
+  currentItem++;
+  if(currentItem > reviews.length - 1) {
+    currentItem = 0;
+  }
+  showPerson(currentItem);
+});
+
+// Show previous review
+prevBtn.addEventListener('click', () => {
+  currentItem--;
+  if(currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+  showPerson(currentItem);
+}); 
