@@ -37,3 +37,30 @@ const reviews = [
       "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
   },
 ];
+
+//Select items
+let img = document.getElementById('person-img');
+let author = document.getElementById('author');
+let job = document.getElementById('job');
+let info = document.getElementById('info');
+
+let prevBtn = document.querySelector('.prev-btn');
+let nextBtn = document.querySelector('.next-btn');
+let randomBtn = document.querySelector('.random-btn');
+
+// Set starting item
+let currentItem = 0;
+
+// Load inital item
+window.addEventListener('DOMContentLoaded', () => {
+  showPerson(currentItem);
+});
+
+// Show person based on item
+const showPerson = (person) => {
+  const item = reviews[person];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+};
